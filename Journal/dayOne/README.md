@@ -1,6 +1,6 @@
 # Day one
 
-On day one at [Antleaf](https://www.antleaf.com/) I met **Paul Walk (CEO)** who introduced and guided me through my project today. This involved making a **Kanban board** to keep track of the elemnts of my project and what stage in development they are in. 
+On day one at [Antleaf](https://www.antleaf.com/) I met **Paul Walk (CEO)** who introduced and guided me through my project today. This involved making a **Kanban board** to keep track of the elements of my project and what stage in development they are in. 
 
 > ![Kanban board image](kanban.png) 
 
