@@ -19,6 +19,8 @@ def csvToList(path): #Function which converts CSV into a list with each row stor
 
 data = csvToList('littleJoeSoilMoistureData.csv') #Set data variable to contain the CSV data as lists
 
+data.pop(0)
+
 app = Flask(__name__)
 
 date = datetime.datetime.now() #Sets date variable to current date and time

@@ -2,9 +2,38 @@ body {
   background-color: rgb(255, 255, 255);
 }
 h1 {
-  color: blue;
-}
-p {
   color: rgb(0, 0, 0);
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 5px;
+}
+table, th, td {
+  border: 3px solid rgb(0, 0, 0);
+  font-family: 'Courier New', Courier, monospace;
+}
+table {
+  border-collapse: collapse;
+  float: right;
+}
+ul {
+  list-style-type: none;
+  background-color: #AEB877;
+}
+.navBar {
+  list-style: none;     
+  padding: 0;
+  margin: 0;
+}
+
+.navBar li {
+  display: inline-block;
+  margin-right: 20px;   
+}
+
+button {
+  float: right;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

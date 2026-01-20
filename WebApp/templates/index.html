@@ -1,15 +1,23 @@
 <head>
 <title>Little Joe Dashboard</title>
 <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+<ul id="navBar">
+    <li><h1>Little Joe Dashboard</h1></li>
+</ul>
+
+<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTlrhEjK7N8t5rG0kyddsc40PY5xdliOVsMsoMq0Nd-CQ554JfyIcqpHbAHhOfnZvJuSiS3jD7agyEr/pub?gid=0&single=true&output=csv&urp=gmail_link" target="_blank"><button>Download data</button></a>
 </head>
-<p>The date is {{x}}</p>
 <img src="{{url_for('static', filename='soil_moisture_probe.jpeg')}}" align="middle" />
-<a href="https://www.google.com/url?sa=D&q=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vTlrhEjK7N8t5rG0kyddsc40PY5xdliOVsMsoMq0Nd-CQ554JfyIcqpHbAHhOfnZvJuSiS3jD7agyEr%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dcsv%26urp%3Dgmail_link&ust=1768913760000000&usg=AOvVaw29Cr7mOCLKJV-ExRLj1MtX&hl=en-GB&source=gmail" target="_blank"><button>Download data</button></a>
 <table id="dataTable">
+    <tr>
+        <td>Time</td>
+        <td>Value</td>
+    </tr>
     {% for i in range(rows) %}
     <tr>
         <td>{{data[i][0]}}</td>
-        <td>{{data[i][1]}}</td>
+        <td>{{data[i][1] | float | round(2)}}</td>
     </tr>
     {% endfor %}
 </table>
