@@ -14,21 +14,18 @@ table {
   border-collapse: collapse;
   float: right;
 }
-ul {
-  list-style-type: none;
+#navBar {
+  list-style: none;
   background-color: #AEB877;
-}
-.navBar {
-  list-style: none;     
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  position: sticky;
 }
 
-.navBar li {
+#navBar li {
   display: inline-block;
-  margin-right: 20px;   
+  margin-right: 20px;
+  vertical-align: middle;
 }
-
 button {
   float: right;
 }

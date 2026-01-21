@@ -1,13 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"></html>
 <head>
 <title>Little Joe Dashboard</title>
 <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <ul id="navBar">
     <li><h1>Little Joe Dashboard</h1></li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTlrhEjK7N8t5rG0kyddsc40PY5xdliOVsMsoMq0Nd-CQ554JfyIcqpHbAHhOfnZvJuSiS3jD7agyEr/pub?gid=0&single=true&output=csv&urp=gmail_link" target="_blank"><button>Download data</button></a></li>
 </ul>
-
-<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTlrhEjK7N8t5rG0kyddsc40PY5xdliOVsMsoMq0Nd-CQ554JfyIcqpHbAHhOfnZvJuSiS3jD7agyEr/pub?gid=0&single=true&output=csv&urp=gmail_link" target="_blank"><button>Download data</button></a>
 </head>
+<body>
+<div style="height: 50vh; width: 99%;">
+        <canvas id="moistureGraph"></canvas>
+</div>
+<script>
+    const labels = JSON.parse('{{ graphLabels | tojson | safe }}');
+    const chartData = JSON.parse('{{ graphData | tojson | safe }}');
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Little Joe Moisture Data',
+            backgroundColor: 'rgb(165, 200, 158)',
+            borderColor: 'rgb(216, 233, 131)',
+            data: chartData,
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: { maintainAspectRatio: false }
+    };
+
+    const myChart = new Chart(
+        document.getElementById('moistureGraph'),
+        config
+    );
+</script>
 <img src="{{url_for('static', filename='soil_moisture_probe.jpeg')}}" align="middle" />
 <table id="dataTable">
     <tr>
@@ -21,3 +51,5 @@
     </tr>
     {% endfor %}
 </table>
+</body>
+</html>
