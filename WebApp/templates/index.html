@@ -4,10 +4,13 @@
 <title>Little Joe Dashboard</title>
 <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div>
 <ul id="navBar">
     <li><h1>Little Joe Dashboard</h1></li>
     <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTlrhEjK7N8t5rG0kyddsc40PY5xdliOVsMsoMq0Nd-CQ554JfyIcqpHbAHhOfnZvJuSiS3jD7agyEr/pub?gid=0&single=true&output=csv&urp=gmail_link" target="_blank"><button>Download data</button></a></li>
+    <li><a href="https://www.adafruit.com/product/4026?srsltid=AfmBOorwksA3nRuMqj47aBZROlmzQWH4U7ByOb7xFl_VUmFu16bskfrO" target="_blank"><button>Sensor information</button></a></li>
 </ul>
+</div>
 </head>
 <body>
 <div style="height: 50vh; width: 99%;">
@@ -38,6 +41,7 @@
         config
     );
 </script>
+<p>Last updated: {{lastUpdated}}</p>
 <img src="{{url_for('static', filename='soil_moisture_probe.jpeg')}}" align="middle" />
 <table id="dataTable">
     <tr>
